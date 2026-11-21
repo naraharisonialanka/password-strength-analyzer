@@ -1,0 +1,300 @@
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+
+    /* Add background image with a dark overlay */
+    background-image:
+        linear-gradient(
+            rgba(3, 12, 25, 0.45),
+            rgba(3, 12, 25, 0.45)
+        ),
+        url("./pwdimgpro.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* Main password checker box */
+.container {
+    width: 60%;
+    max-width: 1150px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    padding: 45px 40px 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(15px);
+}
+
+/* Heading and subtitle */
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aebdca;
+    margin-bottom: 35px;
+}
+
+/* Arrange input and requirements side by side */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Password input area */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #33465a;
+    border-radius: 13px;
+    padding: 0 15px;
+}
+
+input {
+    width: 100%;
+    padding: 17px 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #bdc8d5;
+}
+
+/* Show and hide password button */
+#togglePassword {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Password strength bar */
+.strength-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.strength-meter {
+    height: 12px;
+    width: 100%;
+    background: #33465a;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#strengthBar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        #ff5252,
+        #ffca28,
+        #22c55e
+    );
+
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#percentage {
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 18px;
+    min-width: 55px;
+}
+
+/* Copy password button */
+.copy-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+
+    background: linear-gradient(
+        to right,
+        #087cf5,
+        #06c5df
+    );
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Password requirements list */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #aebdca;
+    font-size: 16px;
+}
+
+/* Tick mark for each requirement */
+.check {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #475569;
+    color: #cbd5e1;
+
+    border-radius: 50%;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+/* Turn the tick green when a requirement is completed */
+.requirement.valid .check {
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+}
+
+.requirement.valid {
+    color: white;
+}
+
+/* Security analysis section */
+.security-box {
+    position: relative;
+    margin-top: 35px;
+    padding: 35px 20px;
+    min-height: 145px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.security-box h3 {
+    font-size: 19px;
+}
+
+.crack-time {
+    color: #bdc8d5;
+    text-align: center;
+}
+
+.crack-time span {
+    color: #06d6e8;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+#securityMessage {
+    grid-column: 1 / 3;
+    text-align: center;
+    color: #d1dbe5;
+}
+
+/* Security emoji */
+.emoji {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 45px;
+}
+
+/* Adjust the layout for mobile screens */
+@media (max-width: 650px) {
+
+    body {
+        padding: 15px;
+        background-attachment: scroll;
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .security-box {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
+
+    #securityMessage {
+        grid-column: 1;
+        margin-top: 10px;
+    }
+
+    .crack-time {
+        text-align: left;
+    }
+
+    .emoji {
+        font-size: 30px;
+        right: 15px;
+        top: 12px;
+    }
+}

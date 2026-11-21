@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Strength Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+
+        <h1>Password Strength Analyzer</h1>
+        <p class="subtitle">Secure Your Digital Life</p>
+
+        <div class="main-content">
+
+            <!-- Password input section -->
+            <div class="left-section">
+
+                <div class="input-group">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                    >
+
+                    <!-- Button to show or hide password -->
+                    <button id="togglePassword" type="button">
+                        👁
+                    </button>
+
+                </div>
+
+                <!-- Password strength indicator -->
+                <div class="strength-container">
+
+                    <div class="strength-meter">
+                        <div id="strengthBar"></div>
+                    </div>
+
+                    <span id="percentage">0%</span>
+
+                </div>
+
+                <!-- Copy password button -->
+                <button id="copyPassword" class="copy-btn" type="button">
+                    📋 Copy Password
+                </button>
+
+            </div>
+
+            <!-- Password requirements section -->
+            <div class="right-section">
+
+                <div class="requirement" id="length">
+                    <span class="check">✓</span>
+                    <span>8+ Characters</span>
+                </div>
+
+                <div class="requirement" id="uppercase">
+                    <span class="check">✓</span>
+                    <span>Uppercase</span>
+                </div>
+
+                <div class="requirement" id="lowercase">
+                    <span class="check">✓</span>
+                    <span>Lowercase</span>
+                </div>
+
+                <div class="requirement" id="number">
+                    <span class="check">✓</span>
+                    <span>Numbers</span>
+                </div>
+
+                <div class="requirement" id="special">
+                    <span class="check">✓</span>
+                    <span>Symbols</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Security analysis section -->
+        <div class="security-box">
+
+            <h3>Security Analysis</h3>
+
+            <div class="crack-time">
+                Crack Time:
+                <span id="crackTime">Not Available</span>
+            </div>
+
+            <p id="securityMessage">
+                Enter a password to analyze its security.
+            </p>
+
+            <div class="emoji" id="securityEmoji">🔐</div>
+
+        </div>
+
+    </div>
+
+    <!-- Connect JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
